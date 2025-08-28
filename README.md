@@ -1,0 +1,2 @@
+# code-review-following-confluence
+confluenceの設計書にそって実装されていることを確認するMCPサーバ
