@@ -14,27 +14,27 @@ def confluence_eval(
     - main_page: メインのConfluenceページURLまたはタイトル
     - subpages: 関連サブページ
     - project_root: ローカルのプロジェクトルート（globの基準）
-    - main_files: 重要ファイル（起点/手がかりとなる相対パス）
+    - main_files: 起点ファイル（プロジェクト走査する際の起点となる相対パス）
     """
     sub = ", ".join(subpages or [])
     files = ", ".join(main_files or [])
     return f"""
 あなたは設計遵守チェックの指揮役です。
 **Atlassian公式の Confluence MCP サーバ**のみを使って設計書を取得し、
-ローカルコードを静的に見て「設計どおりか」を判定してください。
+以下の手順に沿って「設計どおりか」を判定してください。
 
 # 手順
 1) 入力を確認し、Confluenceの対象サイトとページを特定する。
 2) MCPツールを使って本文を取得する。
 3) 本文から要件を抽出する。
-4) ローカルコードを静的に解析し、要件と照合する。
+4) ローカルコードの main_files と関連するファイルを走査する。
 5) レビュー観点に従って判定し、出力フォーマットに従って回答する。
 
 # 入力
 - Confluence メイン: {main_page}
 - サブページ: {sub or "(なし)"}
 - プロジェクトルート: {project_root}
-- 重要ファイル: {files or "(なし)"}
+- 起点ファイル（プロジェクト走査する際の起点となる相対パス）: {files or "(なし)"}
 
 # ツール利用の方針（厳守）
 - Confluence 情報取得は Atlassian公式の Confluence MCP ツールのみ（例: search/get_page/get_content）。
