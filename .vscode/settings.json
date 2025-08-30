@@ -1,0 +1,11 @@
+{
+    "cline.mcpServers": {
+        "code-eval-prompt": {
+            "command": "python",
+            "args": [
+                "./mcp_server/server.py"
+            ],
+            "cwd": "."
+        }
+    }
+}
