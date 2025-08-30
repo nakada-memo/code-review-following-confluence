@@ -7,7 +7,7 @@ Confluenceの設計書に沿ってコードレビューを行うMCPサーバー�
 ### 前提条件
 - python、nodeが使える環境であること
 - clineをインストールしていること
-- clineが使える状態であること
+- clineが使える状態であること(bedrockからapi-keyを払い出すなどする)
 
 ### 1. mcp-remoteのインストール
 ```bash
